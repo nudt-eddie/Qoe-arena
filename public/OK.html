@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <title>File Uploader</title>
+</head>
+<body>
+  <div id="wrapper" class="login-page">
+    <div id="login_form" class="form">
+            <h2>server.py and client.py upload!</h2>
+            <form action="/upload1" method="POST" enctype="multipart/form-data">
+              <input id="file-uploader" type="file" name="file" multiple></br>
+              <button type="submit">Upload client and server</button>
+            </form>
+  </div>
+  </div>
+
+    <input type="button" onclick="txt()" value="result" align="center"/>
+    <p id="myTXT" align="center">
+      <!-- your txt content goes here -->
+    </p>
+  
+  <form action="/runcmd" enctype="multipart/form-data" method="post"> 
+    <button onclick="myFunction()">运行一下</button>
+    <p id="demo"></p>
+  </form> 
+  <form action="/uploadresults" enctype="multipart/form-data" method="post">
+    <button >保存结果到历史记录</button>
+  </form> 
+
+
+<script>
+  function myFunction(){
+    document.getElementById("demo").innerHTML="运行中";
+  }
+  
+  function txt()
+  {
+    var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("myTXT").innerHTML =
+          this.responseText;
+        }
+      };
+      xhttp.open("GET", "result.html", true);
+      xhttp.send();
+  }
+</script>
+</body>
+</html>
