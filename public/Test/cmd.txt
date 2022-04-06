@@ -1,0 +1,9 @@
+ssh user@nlab.xphi.name -p 28116
+WKKR#NSCC.2021
+conda activate nlab 
+python3 ./manager.py --client_ip 192.168.99.101 --client_password 123456 --client_username user --server_ip 192.168.99.102 --server_password 123456 --server_username user
+
+sudo tc qdisc add  dev ens19 root netem loss 0.01% delay 1ms
+sudo tc qdisc del  dev ens19 root netem loss 0.01% delay 1ms
+
+python3 ./manager.py --client_ip 10.129.84.223 --client_password nudtnudt --client_username nudt --server_ip 10.129.84.222 --server_password nudtnudt --server_username nudt

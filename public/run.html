@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>File Uploader</title>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../favicon.ico">
+
+</head>
+<body>
+  <input type="button" onclick="txt()" value="result" align="center"/>
+  <p id="myTXT" align="center">
+    <!-- your txt content goes here -->
+  </p>
+
+<form action="/runcmd" enctype="multipart/form-data" method="post"> 
+  <button onclick="myFunction()">运行一下</button>
+  <p id="demo"></p>
+</form> 
+<form action="/uploadresults" enctype="multipart/form-data" method="post">
+  <button >保存结果到数据库</button>
+</form> 
+
+
+<script>
+  function myFunction(){
+    document.getElementById("demo").innerHTML="运行中";
+  }
+  </script>
+<script>
+  function txt()
+  {
+    var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("myTXT").innerHTML =
+          this.responseText;
+        }
+      };
+      xhttp.open("GET", "result.html", true);
+      xhttp.send();
+  }
+</script>
+
+  
+
+</html>

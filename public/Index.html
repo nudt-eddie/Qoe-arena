@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <script type="text/javascript" src="lib/virtualrubik.js"></script>
+    <script type="text/javascript">includeVirtualRubik("lib");</script>
+    <style>
+      canvas{
+        display: block;
+        margin: 0 auto;
+        border:1px solid #8DC26F;
+      }
+    </style>
+  
+</head>
+<body>
+    <div id="wrapper" class="login-page">
+        <div id="login_form" class="form">
+          <form class="login-form" action="/login">
+            <input type="text" placeholder="用户名" id="user_name" name="name"/>
+            <input type="password" placeholder="密码" id="password" name="pwd"/>
+            <button id="login">登　录</button>
+            <p class="message">还没有账户? <a href="Register.html">立刻创建</a></p>
+          </form>
+        </div>
+      </div>
+      <body onLoad="attachVirtualRubik();">
+        <canvas id="canvas1" class="virtualrubik" width="200" height="200"></canvas>
+        <p align="center"><input type="checkbox" 
+            onchange="document.getElementById('canvas1').virtualrubik.setAutorotate(this.checked);">Autorotate</input></p>
+        <p align="center"><button type="button"
+            onclick="document.getElementById('canvas1').virtualrubik.reset();">Reset</button>
+           <button type="button"
+            onclick="document.getElementById('canvas1').virtualrubik.scramble();">Scramble</button>
+           <button type="button"
+            onclick="document.getElementById('canvas1').virtualrubik.wobble();">Wobble</button>
+           <button type="button"
+            onclick="document.getElementById('canvas1').virtualrubik.explode();">Explode</button></p>
+ 
+            
+      </body>       
+</body>
+
+</html>

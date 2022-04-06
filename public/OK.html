@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>File Uploader</title>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../favicon.ico">
+
+</head>
+<body>
+  <div class="container">
+    <div class="row first_row">
+      <div class="col-xs-10">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h2>server.py and client.py upload!</h2>
+            </div>
+            <form action="/upload1" method="POST" enctype="multipart/form-data">
+              <input id="file-uploader" type="file" name="photos" multiple></br>
+              <div class="progress-bar">
+                <div class="inner"></div>
+              </div>
+              <div class="status">0%</div>
+              <button type="submit">Upload client and server</button>
+            </form>
+        </div>
+      </div>
+    </div>
+    <p class="message">运行 <a href="Run.html">去运行并保存</a></p>
+
+
+
+<script>
+  function myFunction(){
+    document.getElementById("demo").innerHTML="运行中";
+  }
+  </script>
+<script>
+  function txt()
+  {
+    var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("myTXT").innerHTML =
+          this.responseText;
+        }
+      };
+      xhttp.open("GET", "result.html", true);
+      xhttp.send();
+  }
+</script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="/js/scripts.js"></script>
+
+  
+
+</html>
